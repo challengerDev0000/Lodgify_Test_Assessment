@@ -41,8 +41,8 @@ input[type='checkbox'] + label::before {
 }
 
 input[type='checkbox']:checked + label::before {
-  background: #5ac5c9;
-  border: 1px solid var(--greyscale-500, #5ac5c9);
+  background: #02BC9C;
+  border: 1px solid var(--greyscale-500, #02BC9C);
 }
 
 input[type='checkbox']:checked + label::after {
