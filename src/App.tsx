@@ -1,10 +1,14 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import Accordion from "./components/Accordion/Accordion";
-import ProgressBar from "./components/ProgressBar";
+import ProgressBar from "./components/ProgressBar/ProgressBar";
 import { TaskListContext } from "./context/TaskContext";
 import { ITaskList } from "./types";
-import { getTaskLists } from "./utils/api.service";
+import { getTaskLists } from "./services/api.service";
+import {
+  calculateCompletedPoints,
+  calculateTotalPoints,
+} from "./utils/numberUtils";
 
 function App() {
   const [taskList, setTaskList] = useState<Array<ITaskList>>([]);
@@ -23,29 +27,10 @@ function App() {
     fetchData();
   }, []);
 
-  const calculateTotalPoints = useCallback(
-    (tasks: Array<ITaskList>): number =>
-      tasks
-        .flatMap((task) => task.tasks)
-        .reduce((sum, task) => sum + task.value, 0),
-    []
-  );
-
-  const calculateCompletedPoints = useCallback(
-    (tasks: Array<ITaskList>): number =>
-      tasks
-        .flatMap((task) => task.tasks.filter((t) => t.checked))
-        .reduce((sum, task) => sum + task.value, 0),
-    []
-  );
-
-  const updateTask = useCallback(
-    (newTaskList: Array<ITaskList>) => {
-      setTaskList(newTaskList);
-      setCurrentProgress(calculateCompletedPoints(taskList));
-    },
-    [taskList]
-  );
+  const updateTask = useCallback((newTaskList: Array<ITaskList>) => {
+    setTaskList(newTaskList);
+    setCurrentProgress(calculateCompletedPoints(newTaskList));
+  }, []);
 
   return (
     <TaskListContext.Provider value={{ taskList, updateTask }}>

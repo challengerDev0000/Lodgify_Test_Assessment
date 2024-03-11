@@ -60,7 +60,7 @@
   height: 16px;
   color: #CCC;
   margin-left: auto;
-  background-image: url("../../assets/images/arrow-down.png");
+  background-image: url("../../../assets/images/arrow-down.png");
   background-repeat: no-repeat;
   background-size: 18px;
   transition: transform 0.2s ease-in-out;

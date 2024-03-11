@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { ITaskList } from "../../types";
 import "./Accordion.css";
-import AccordionItem from "./AccordionItem";
+import AccordionItem from "./AccordionItem/AccordionItem";
 
 interface IAccordionItemProps {
   items: Array<ITaskList>;

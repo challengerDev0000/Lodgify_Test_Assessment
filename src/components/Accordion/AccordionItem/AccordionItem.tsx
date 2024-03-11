@@ -1,9 +1,9 @@
 import { useCallback, useState } from "react";
-import BOOK_IMAGE_COMPLETED from "../../assets/images/booking-completed.png";
-import BOOK_IMAGE from "../../assets/images/booking.png";
-import { useTaskList } from "../../hooks/useTaskList";
-import { ITaskList } from "../../types";
-import SubTask from "../SubTask";
+import BOOK_IMAGE_COMPLETED from "../../../assets/images/booking-completed.png";
+import BOOK_IMAGE from "../../../assets/images/booking.png";
+import { useTaskList } from "../../../hooks/useTaskList";
+import { ITaskList } from "../../../types";
+import SubTask from "../../SubTask/SubTask";
 import "./AccordionItem.css";
 interface IAccordionItemProps {
   data: ITaskList;
