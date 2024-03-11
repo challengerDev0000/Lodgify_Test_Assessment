@@ -1,0 +1,1 @@
+# Lodgify_Test_Assessment
