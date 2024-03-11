@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../src/assets/fonts/SourceSansPro.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "SourceSansPro";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  background-color: #eee;
+}
+
+.flex {
+  display: flex;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+

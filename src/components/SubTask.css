@@ -1,0 +1,72 @@
+.checkbox-container {
+  padding: 16px;
+}
+
+.checkbox-container label {
+  font-size: 16px;
+}
+
+.checkbox-container,
+.checkbox-container * {
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  margin-right: 8px;
+}
+.checkbox-container input:checked::before {
+  background-color: #000; /* Customize checked color */
+}
+
+input[type='checkbox'] {
+  position: absolute;
+}
+
+input[type='checkbox'] + label {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+input[type='checkbox'] + label::before {
+  content: '';
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid var(--greyscale-500, #999);
+}
+
+input[type='checkbox']:checked + label::before {
+  background: #5ac5c9;
+  border: 1px solid var(--greyscale-500, #5ac5c9);
+}
+
+input[type='checkbox']:checked + label::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  height: 4px;
+  width: 8px;
+  transform: rotate(-45deg);
+}
+
+input[type='checkbox']:focus + label::before {
+  outline: #5d9dd5 solid 1px;
+  box-shadow: 0 0px 8px #5e9ed6;
+}
+
+input[type='checkbox'] {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
